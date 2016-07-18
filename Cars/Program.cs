@@ -56,16 +56,26 @@ namespace Cars
                     case "G":
                     case "g":
                         Console.WriteLine("Which car do you want to add gas to?");
-                        int thisCar = Convert.ToInt32(Console.ReadLine());
-                        Car gasUpCar = GroupOfCars[thisCar];
-                        if (gasUpCar == null)
+                        try
                         {
-                            Console.WriteLine("That car does not exist.");
+                            int thisCar = Convert.ToInt32(Console.ReadLine());
+                            Car gasUpCar = GroupOfCars[thisCar];
+                            if (gasUpCar == null)
+                            {
+                                Console.WriteLine("That car does not exist.");
+                                break;
+                            }
+                            Console.WriteLine("How much gas do you want to add?");
+                            float howMuchGas = (float)Convert.ToDouble(Console.ReadLine());
+                            gasUpCar.AddGas(howMuchGas);
+                            break;
                         }
-                        Console.WriteLine("How much gas do you want to add?");
-                        float howMuchGas = (float)Convert.ToDouble(Console.ReadLine());
-                        gasUpCar.AddGas(howMuchGas);
-                        break;
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            break;
+                        }          
+                       
                     case "M":
                     case "m":
                         Console.WriteLine("Which car do you want to add miles to?");

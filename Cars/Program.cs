@@ -92,6 +92,7 @@ namespace Cars
                         Console.WriteLine("Invalid Command");
                         break;
                 }
+                // this exits the program
                 if (inputText == "q" || inputText == "Q")
                 {
                     break;

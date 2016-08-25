@@ -28,24 +28,52 @@ namespace Cars
                 {
                     case "A":
                     case "a":
+                        Console.WriteLine("What spot do you want to add the car?");
+                        try
+                        {
+                            int possibleCar = Convert.ToInt32(Console.ReadLine());
+                            if (GroupOfCars[possibleCar] != null)
+                            {
+                                Console.WriteLine("Car already exist the spot.");
+                                break;
+                            }
+                            Console.WriteLine("Whats the make?");
+                            string make = Console.ReadLine();
+                            Console.WriteLine("Whats the model?");
+                            string model = Console.ReadLine();
+                            Console.WriteLine("Whats the size of the gas tank?");
+                            float sizeOfTheTank = (float)Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Whats the MPG?");
+                            float MPG = (float)Convert.ToDouble(Console.ReadLine());
+                            Car carBeingCreated = new Car(make, model, sizeOfTheTank, MPG);
+                            GroupOfCars[possibleCar] = carBeingCreated;
+                        }
+                        catch(Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
                         break;
                     case "D":
                     case "d":
                         Console.WriteLine("Which Car do you want to delete?");
-                        int carToDelete = Convert.ToInt32(Console.ReadLine());
-                        if (GroupOfCars[carToDelete] == null)
+                        try
                         {
-                            Console.WriteLine("Invalid Command");
-                            break;
-                        }
-                        else
-                        {
+                            int carToDelete = Convert.ToInt32(Console.ReadLine());
+                            if (GroupOfCars[carToDelete] == null)
+                            {
+                                Console.WriteLine("Invalid Command");
+                                break;
+                            }
                             GroupOfCars[carToDelete] = null;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
                         }
                         break;
                     case "P":
                     case "p":
-                        for (int i = 0; i <= GroupOfCars.Length; i++)
+                        for (int i = 0; i < GroupOfCars.Length; i++)
                         {
                             if (GroupOfCars[i] != null)
                             {
@@ -79,22 +107,30 @@ namespace Cars
                     case "M":
                     case "m":
                         Console.WriteLine("Which car do you want to add miles to?");
-                        int whichCar = Convert.ToInt32(Console.ReadLine());
-                        Car specificCar = GroupOfCars[whichCar];
-                        if (specificCar == null)
+                        try
                         {
-                            Console.WriteLine("Car does not exist.");
+                            int whichCar = Convert.ToInt32(Console.ReadLine());
+                            Car specificCar = GroupOfCars[whichCar];
+                            if (specificCar == null)
+                            {
+                                Console.WriteLine("Car does not exist.");
+                                break;
+                            }
+                            Console.WriteLine("How many miles do you want to add to the car?");
+                            float howManyMIles = (float)Convert.ToDouble(Console.ReadLine());
+                            if (!specificCar.HasEnoughGas(howManyMIles))
+                            {
+                                Console.WriteLine("Not enough gas.");
+                                break;
+                            }
+                            specificCar.AddMiles(howManyMIles);
                             break;
                         }
-                        Console.WriteLine("How many miles do you want to add to the car?");
-                        float howManyMIles = (float)Convert.ToDouble(Console.ReadLine());
-                        if (!specificCar.HasEnoughGas(howManyMIles))
+                        catch (Exception e)
                         {
-                            Console.WriteLine("Not enough gas.");
+                            Console.WriteLine(e.Message);
                             break;
                         }
-                        specificCar.AddMiles(howManyMIles);
-                        break;
                     case "Q": 
                     case "q":
                         break;

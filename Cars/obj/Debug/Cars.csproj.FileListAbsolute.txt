@@ -4,3 +4,9 @@ C:\Users\Owner\documents\visual studio 2015\Projects\Cars\Cars\bin\Debug\Cars.pd
 C:\Users\Owner\documents\visual studio 2015\Projects\Cars\Cars\obj\Debug\Cars.csprojResolveAssemblyReference.cache
 C:\Users\Owner\documents\visual studio 2015\Projects\Cars\Cars\obj\Debug\Cars.exe
 C:\Users\Owner\documents\visual studio 2015\Projects\Cars\Cars\obj\Debug\Cars.pdb
+C:\Users\Owner\Documents\GitHub\CarsMenu\Cars\bin\Debug\Cars.exe.config
+C:\Users\Owner\Documents\GitHub\CarsMenu\Cars\obj\Debug\Cars.exe
+C:\Users\Owner\Documents\GitHub\CarsMenu\Cars\obj\Debug\Cars.pdb
+C:\Users\Owner\Documents\GitHub\CarsMenu\Cars\bin\Debug\Cars.exe
+C:\Users\Owner\Documents\GitHub\CarsMenu\Cars\bin\Debug\Cars.pdb
+C:\Users\Owner\Documents\GitHub\CarsMenu\Cars\obj\Debug\Cars.csprojResolveAssemblyReference.cache

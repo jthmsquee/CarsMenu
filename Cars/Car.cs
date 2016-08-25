@@ -15,6 +15,17 @@ namespace Cars
         private float MPG { get; set; }
         private float AvailableGas { get; set; }
 
+        public Car(string Make, string Model, float GasTankSizeInGallons, float MPG)
+        {
+            this.Make = Make;
+            this.Model = Model;
+            this.GasTankSizeInGallons = GasTankSizeInGallons;
+            this.MPG = MPG;
+            TotalMiles = 0;
+            AvailableGas = 0;
+
+        }
+
         public void Print()
         {
             Console.WriteLine("Make: " + Make);
@@ -28,7 +39,7 @@ namespace Cars
 
         public bool HasEnoughGas(float miles)
         {
-            float availableMiles = (AvailableGas / MPG);
+            float availableMiles = (AvailableGas * MPG);
             return availableMiles >= miles;
         }
 
